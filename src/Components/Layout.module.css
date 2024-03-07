@@ -1,0 +1,15 @@
+
+  .Grid {
+    display: grid;
+    grid-template-areas:
+        "Navigation Header"
+        "Navigation Content"
+        "Navigation Content";
+    
+        grid-template-rows: 13% 80%;
+          grid-template-columns: 20% 80%;
+          grid-gap: 10px;
+          height: 100vh;
+          margin: 0;
+  }
+  

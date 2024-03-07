@@ -1,0 +1,11 @@
+.search_label{
+    background-color: white;
+    height: 60%;
+    border-radius: 15px;
+    
+}
+.search{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

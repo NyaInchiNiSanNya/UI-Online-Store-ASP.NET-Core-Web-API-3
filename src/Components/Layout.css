@@ -1,0 +1,14 @@
+.main_block{
+    background-color: #0a0a0a;
+  }
+
+  .button{
+    background-color: #0a0a0a;
+    border: #0a0a0a;
+    color: white;
+  }
+  .button:hover {
+    color: yellow;
+    border: #1f1f1f;
+    background-color: #1f1f1f;
+  }
