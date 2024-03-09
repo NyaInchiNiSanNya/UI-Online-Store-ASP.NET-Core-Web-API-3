@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Tags from './Tags';
 import {setCurrentPage, getTagsByPageThunkCreator} from '../../../../Reducers/tag-reducer';
+import { getTags,  getPageSize, getTotalTagsCount, getCurrentPage } from '../../../../Reducers/tag-selectors';
 import React from 'react';
 
 class TagsContainer extends React.Component {
@@ -27,10 +28,10 @@ class TagsContainer extends React.Component {
 let mapStateToProps=(state)=>{
     
   return {
-    tags: state.tags.tags,
-    pageSize: state.tags.pageSize,
-    totalTagsCount: state.tags.totalTagsCount,
-    currentPage: state.tags.currentPage,
+    tags: getTags(state),
+    pageSize: getPageSize(state),
+    totalTagsCount: getTotalTagsCount(state),
+    currentPage: getCurrentPage(state),
   }
 }
 

@@ -3,6 +3,7 @@ import { getProductsWithTagThunkCreator } from '../../../../Reducers/product-red
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom'; 
 import ProductsWithTags from './ProductsWithTags';
+import { getProducts } from '../../../../Reducers/products-selectors';
 
 const ProductsWithTagsContainer = ({ getProductsWithTagThunkCreator, products }) => {
   const { tagId } = useParams(); 
@@ -15,7 +16,7 @@ const ProductsWithTagsContainer = ({ getProductsWithTagThunkCreator, products })
 };
 
 const mapStateToProps = (state) => ({
-  products: state.products.products
+  products: getProducts(state)
 });
 
 export default connect(mapStateToProps, {

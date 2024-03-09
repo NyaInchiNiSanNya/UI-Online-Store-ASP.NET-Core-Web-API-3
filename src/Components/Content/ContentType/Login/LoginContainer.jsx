@@ -24,10 +24,6 @@ class LoginContainer extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  products: state.products.products,
-  pageSize: state.products.pageSize,
-  totalProductsCount: state.products.totalProductsCount,
-  currentPage: state.products.currentPage,
 });
 
 export default connect(mapStateToProps, {

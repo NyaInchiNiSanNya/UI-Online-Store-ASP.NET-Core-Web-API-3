@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import { setCurrentPage,  getProductsByPageThunkCreator } from '../../../../Reducers/product-reducer';
 import React, { Component } from 'react';
 import Products from './Products';
-import authRedirect from '../../../../hoc/authRedirect';
+import { getProducts,  getPageSize, getTotalProductsCount, getCurrentPage } from '../../../../Reducers/products-selectors';
+import { isUserAuthenticated } from '../../../../Reducers/auth-selectors';
 import { compose } from 'redux';
 
 
@@ -37,11 +38,11 @@ class ProductsContainer extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  products: state.products.products,
-  pageSize: state.products.pageSize,
-  totalProductsCount: state.products.totalProductsCount,
-  currentPage: state.products.currentPage,
-  isAuth: state.auth.isAuthenticated,
+  products: getProducts(state),
+  pageSize: getPageSize(state),
+  totalProductsCount: getTotalProductsCount(state),
+  currentPage: getCurrentPage(state),
+  isAuth: isUserAuthenticated(state),
 });
 
 export default compose(
@@ -49,5 +50,4 @@ export default compose(
   connect(mapStateToProps, {
     setCurrentPage,
     getProductsByPageThunkCreator}),
-  // authRedirect
 )(ProductsContainer);
